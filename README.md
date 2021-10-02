@@ -41,17 +41,17 @@ Esta API cuenta con un endpoint el cual de forma opcional se le pueder agregar e
 
 El siguiente endpoint nos permitirá retornar todos los productos existentes en la base de datos
 ~~~ 
-git clone https://ccartes.000webhostapp.com/product.php
+https://ccartes.000webhostapp.com/product.php
 ~~~
 
 opcionalmente, si agregamos el parámetro id, obtendremos todos los productos con la categoría que hemos enviado(id)
 ~~~ 
-git clone https://ccartes.000webhostapp.com/product.php?id=(id)
+https://ccartes.000webhostapp.com/product.php?id=(id)
 ~~~
 
 ## Respuesta
 
-Si no hemos enviado ningún parámetro, nos retornara lo siguiente
+Si no hemos enviado ningún parámetro, nos retornará lo siguiente
 
 ~~~ 
 {
