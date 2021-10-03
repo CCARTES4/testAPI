@@ -9,6 +9,7 @@ Este proyecto cuenta con 1 sola rama en la cual, se encuentra el back-end de la 
 
 <li> Retornar todos los productos
 <li> Retornar productos según categoría
+<li> Retornar productos por nombre 
 
 ## Tecnologías
 
@@ -16,7 +17,7 @@ Este proyecto cuenta con 1 sola rama en la cual, se encuentra el back-end de la 
 
 ## Demo
 
-Si quieres ver una demo del proyecto, puedes acceder al deploy en el siguiente enlace: <a href="https://ccartes.000webhostapp.com/product.php/">Bsale API </a>
+Si quieres ver una demo del proyecto, puedes acceder al deploy en el siguiente enlace: <a href="https://ccartes.000webhostapp.com/products.php/">Bsale API </a>
 
 ## Cómo clonar
 
