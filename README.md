@@ -2,8 +2,6 @@
 
 Esta API consiste en el retorno de productos ya sea en general o filtrados por categoría.
 
-<img src="./docs/preview.png">
-
 ## Contenido  
 Este proyecto cuenta con 1 sola rama en la cual, se encuentra el back-end de la aplicación.  
 
@@ -37,16 +35,12 @@ La API no cuenta con sistema de autenticación, por lo tanto, podrás realizar l
 
 ## Endpoints 
 
-Esta API cuenta con un endpoint el cual de forma opcional se le pueder agregar el parámetro "id" que realizará una búsqueda según categoría de producto.
+Esta API cuenta con 3 endpoints dentro de los cuales podremos enviar una petición GET para obtener todos los productos, productos filtrados según categoría y productos filtrados según nombre.
 
-El siguiente endpoint nos permitirá retornar todos los productos existentes en la base de datos
+### Endpoint General
+El siguiente endpoint nos permitirá retornar todos los productos existentes en la base de datos.
 ~~~ 
-https://ccartes.000webhostapp.com/product.php
-~~~
-
-opcionalmente, si agregamos el parámetro id, obtendremos todos los productos con la categoría que hemos enviado(id)
-~~~ 
-https://ccartes.000webhostapp.com/product.php?id=(id)
+https://ccartes.000webhostapp.com/products.php
 ~~~
 
 ## Respuesta
@@ -72,7 +66,13 @@ Si no hemos enviado ningún parámetro, nos retornará lo siguiente
 },
 ~~~
 
-Se enviamos el parámetro "id", la API nos retornara algo como lo siguiente
+### Endpoint categoria
+opcionalmente, si agregamos el parámetro "categoria (INT)", obtendremos todos los productos con la categoría que hemos enviado
+~~~ 
+https://ccartes.000webhostapp.com/products.php?categoria=(categoria)
+~~~
+
+La API nos retornara algo como lo siguiente
 
 ~~~ 
 {
@@ -104,6 +104,43 @@ Se enviamos el parámetro "id", la API nos retornara algo como lo siguiente
     category: "2"
 },
 ~~~
+
+### Endpoint nombre
+Si agregamos el parámetro "nombre (string)", obtendremos todos los productos en los cuales contengan el criterio de búsqueda que hemos enviado
+~~~ 
+https://ccartes.000webhostapp.com/products.php?nombre=(nombre)
+~~~
+
+En este ejemplo buscaremos un producto que coincida con el nombre "coca"  
+La API nos retornara algo como lo siguiente: 
+
+~~~ 
+{
+    id: "37",
+    name: "COCA COLA ZERO DESECHABLE",
+    url_image: "https://dojiw2m9tvv09.cloudfront.net/11132/product/cocazero9766.jpg",
+    price: "1490",
+    discount: "0",
+    category: "4"
+},
+{
+    id: "57",
+    name: "COCA COLA NORMAL DESECHABLE 1500cc",
+    url_image: null,
+    price: "1500",
+    discount: "0",
+    category: "4"
+},
+{
+    id: "58",
+    name: "COCA COLA LIGHT DESECHABLE",
+    url_image: null,
+    price: "1500",
+    discount: "0",
+    category: "4"
+}
+~~~
+
 
 ## Autor
 

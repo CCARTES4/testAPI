@@ -7,6 +7,7 @@ header('Content-Type: application/json');
 
 $dbConn =  connect($db);
 
+//waiting for GET Petition
 if ($_SERVER['REQUEST_METHOD'] == 'GET')
 {
   if (isset($_GET['categoria'])) {
