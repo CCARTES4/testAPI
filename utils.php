@@ -11,14 +11,5 @@
         } catch (PDOException $exception) {
             exit($exception->getMessage());
         }
-  }
-
-  
-	function bindAllValues($statement, $params)
-    {
-	    foreach($params as $param => $value) {
-		    $statement->bindValue(':'.$param, $value);
-		}
-		return $statement;
     }
 ?>
