@@ -35,15 +35,8 @@
             $nombre = htmlspecialchars($_GET['nombre']);
             $sql = $dbConn->prepare("SELECT * FROM product where name LIKE '%$nombre%' ");
             execQuery($sql);
-            break;
-
-        case isset($_GET['categorias']): //funciona
-            $sql = $dbConn->prepare("SELECT * FROM category"); 
-            execQuery($sql);
-            break;
-
+            break;     
             
-
         default:
             $sql = $dbConn->prepare("SELECT * FROM product"); //funciona
             execQuery($sql);
