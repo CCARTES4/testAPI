@@ -8,6 +8,7 @@ Este proyecto cuenta con 1 sola rama en la cual, se encuentra el back-end de la 
 ## Funcionalidad
 
 <li> Retornar todos los productos
+<li> Retornar todas las categorias
 <li> Retornar productos según categoría
 <li> Retornar productos por nombre 
 
@@ -28,7 +29,7 @@ git clone https://github.com/CCARTES4/test-Bsale.git
 
 ## Instalación 
 
-Necitas correrlo en un servidor, ya sea un servidor local(por ej: XAMPP) o un servidor web.
+Necesitas correrlo en un servidor, ya sea un servidor local(por ej: XAMPP) o un servidor web.
 
 ## Autenticación 
 
@@ -36,7 +37,7 @@ La API no cuenta con sistema de autenticación, por lo tanto, podrás realizar l
 
 ## Endpoints 
 
-Esta API cuenta con 3 endpoints dentro de los cuales podremos enviar una petición GET para obtener todos los productos, productos filtrados según categoría y productos filtrados según nombre.
+Esta API cuenta con 4 endpoints dentro de los cuales podremos enviar una petición GET para obtener todos los productos, productos filtrados según categoría y productos filtrados según nombre.
 
 ### Endpoint General
 El siguiente endpoint nos permitirá retornar todos los productos existentes en la base de datos.
@@ -67,8 +68,31 @@ Si no hemos enviado ningún parámetro, nos retornará lo siguiente
 },
 ~~~
 
-### Endpoint categoria
-opcionalmente, si agregamos el parámetro "categoria (INT)", obtendremos todos los productos con la categoría que hemos enviado
+### Endpoint categorias (retornar todas las categorias existentes)
+Si le indicamos a la API que necesitamos todas las categorías, esta nos retornará su id y el nombre de esta.
+~~~ 
+https://ccartes.000webhostapp.com/categories.php?categorias
+~~~
+
+La API nos retornara algo como lo siguiente: 
+
+~~~ 
+{
+    "id": "1",
+    "name": "bebida energetica"
+},
+{
+    "id": "2",
+    "name": "pisco"
+},
+{
+    "id": "3",
+    "name": "ron"
+},
+~~~
+
+### Endpoint Producto - categoria (Buscar productos según categoría)
+Si agregamos el parámetro "categoria (INT)", obtendremos todos los productos con la categoría que hemos enviado
 ~~~ 
 https://ccartes.000webhostapp.com/products.php?categoria=(categoria)
 ~~~
@@ -106,7 +130,7 @@ La API nos retornara algo como lo siguiente
 },
 ~~~
 
-### Endpoint nombre
+### Endpoint nombre (buscar producto según nombre)
 Si agregamos el parámetro "nombre (string)", obtendremos todos los productos en los cuales contengan el criterio de búsqueda que hemos enviado
 ~~~ 
 https://ccartes.000webhostapp.com/products.php?nombre=(nombre)
