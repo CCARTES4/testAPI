@@ -24,21 +24,22 @@
     }
 
     //Esperando petición tipo GET
+    //Según parametro recibido, variará el retorno. 
     switch ($_SERVER['REQUEST_METHOD'] == 'GET') {
-        case isset($_GET['categoria']): //funciona
+        case isset($_GET['categoria']): 
             $categoria = htmlspecialchars($_GET['categoria']);
             $sql = $dbConn->prepare("SELECT * FROM product where category = $categoria");
             execQuery($sql);
             break;
 
-        case isset($_GET['nombre']): //funciona
+        case isset($_GET['nombre']):
             $nombre = htmlspecialchars($_GET['nombre']);
             $sql = $dbConn->prepare("SELECT * FROM product where name LIKE '%$nombre%' ");
             execQuery($sql);
             break;     
             
         default:
-            $sql = $dbConn->prepare("SELECT * FROM product"); //funciona
+            $sql = $dbConn->prepare("SELECT * FROM product"); 
             execQuery($sql);
             break;
     }
