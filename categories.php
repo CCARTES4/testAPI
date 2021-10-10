@@ -17,10 +17,12 @@
             $sql = $dbConn->prepare("SELECT * FROM category"); 
             $sql->execute();
             $sql->setFetchMode(PDO::FETCH_ASSOC);
-            header("HTTP/ 1.1 200 OK");
             echo json_encode( $sql->fetchAll() );
             exit();
+            header("HTTP/ 1.1 200 OK");
         }
     }
+
+    header("HTTP/1.1 400 Bad Request");
 
 ?>

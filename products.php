@@ -11,16 +11,11 @@
     //Función que ejecuta la consulta y retorna un código de respuesta 200 
     //Dado que este código será ejecutado en cada case, se optó por crear una función para evitar repetirlo demasiadas veces.
     function execQuery($sql) {
-        try {
-            $sql->execute();
-            $sql->setFetchMode(PDO::FETCH_ASSOC);
-            header("HTTP/ 1.1 200 OK");
-            echo json_encode( $sql->fetchAll() );
-            exit();
-        } catch (\Throwable $th) {
-            echo $th->getMessage();
-        }
-        
+        $sql->execute();
+        $sql->setFetchMode(PDO::FETCH_ASSOC);
+        echo json_encode( $sql->fetchAll() );
+        exit();
+        header("HTTP/ 1.1 200 OK");
     }
 
     //Esperando petición tipo GET
@@ -30,6 +25,7 @@
             $categoria = htmlspecialchars($_GET['categoria']);
             $sql = $dbConn->prepare("SELECT * FROM product where category = $categoria");
             execQuery($sql);
+            
             break;
 
         case isset($_GET['nombre']):
@@ -44,4 +40,6 @@
             break;
     }
 
+    header("HTTP/1.1 400 Bad Request");
 
+?>
