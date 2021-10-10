@@ -24,7 +24,7 @@
     }
 
     //Esperando petición tipo GET
-    //Según parametro recibido, variará el retorno. 
+    //Según parametro recibido, la sentencia SQL variará y, por lo tanto, también el retorno. 
     switch ($_SERVER['REQUEST_METHOD'] == 'GET') {
         case isset($_GET['categoria']): 
             $categoria = htmlspecialchars($_GET['categoria']);
